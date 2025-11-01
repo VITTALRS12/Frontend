@@ -1,0 +1,100 @@
+/* AdminProductCreatePage.css */
+
+/* ====== Root Variables ====== */
+:root {
+  --primary-color: #6e45e2;
+  --primary-hover: #5632b8;
+  --secondary-color: #f0f1f5;
+  --input-bg: #ffffff;
+  --input-border: #ccc;
+  --input-focus: #6e45e2;
+  --button-text: #fff;
+  --danger-color: #ff4d4f;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+  --transition: 0.3s ease;
+}
+
+/* ====== Global Styles ====== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f7f8fc;
+  color: #333;
+}
+
+/* ====== Container ====== */
+.create-product {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px 25px;
+  background: var(--secondary-color);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px var(--shadow);
+  backdrop-filter: blur(5px);
+}
+
+.create-product h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+/* ====== Form Elements ====== */
+.create-product form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.create-product input {
+  padding: 12px 15px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--input-border);
+  font-size: 1rem;
+  transition: all var(--transition);
+  outline: none;
+  background-color: var(--input-bg);
+}
+
+.create-product input:focus {
+  border-color: var(--input-focus);
+  box-shadow: 0 0 8px rgba(110, 69, 226, 0.3);
+}
+
+.create-product button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--primary-color);
+  color: var(--button-text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.create-product button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 600px) {
+  .create-product {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .create-product h2 {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,51 @@
+/* ProfilePhotoUploader.css */
+
+.photo-uploader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* The profile photo image */
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #007bff;
+}
+
+/* The initials placeholder */
+.placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Hide the default file input */
+.photo-uploader input[type="file"] {
+  display: none;
+}
+
+/* Styled label as upload button */
+/* .photo-uploader label {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+} */
+
+.photo-uploader label:hover {
+  background-color: #0069d9;
+}

@@ -1,0 +1,177 @@
+/* ====== Root Variables ====== */
+:root {
+  --primary-color: #6e45e2;
+  --primary-hover: #5632b8;
+  --success-color: #34d399;
+  --success-bg: #d1fae5;
+  --warning-color: #facc15;
+  --warning-bg: #fef9c3;
+  --bg-color: #f7f8fc;
+  --card-bg: #fff;
+  --text-color: #1f2937;
+  --text-muted: #6b7280;
+  --radius: 12px;
+  --shadow: rgba(0, 0, 0, 0.12);
+  --transition: 0.3s ease;
+}
+
+/* ====== Global Styles ====== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* ====== Dashboard Container ====== */
+.p-6 {
+  padding: 24px;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* ====== Stats Cards ====== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.grid > div {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: all var(--transition);
+  text-align: center;
+}
+
+.grid > div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.grid h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.grid p {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+/* ====== Filter Buttons ====== */
+.filter-btn {
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--primary-color);
+  background-color: #fff;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-weight: 600;
+}
+
+.filter-btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.filter-btn.active {
+  background-color: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ====== Referral Cards ====== */
+.referral-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--card-bg);
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: all var(--transition);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.referral-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.referral-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* ====== Status Badges ====== */
+.bg-green-100 {
+  background-color: var(--success-bg);
+  color: var(--success-color);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.bg-yellow-100 {
+  background-color: var(--warning-bg);
+  color: var(--warning-color);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* ====== Loading & Empty ====== */
+.text-center {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .referral-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

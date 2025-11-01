@@ -1,0 +1,14 @@
+.rating-stars {
+  display: flex;
+  gap: 4px;
+  font-size: 24px;
+  color: #ccc;
+}
+
+.star.filled {
+  color: #f7c948; /* gold */
+}
+
+.star:hover {
+  color: #f7c948;
+}

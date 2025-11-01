@@ -1,0 +1,221 @@
+/* ===== Root Variables ===== */
+:root {
+  --primary: #00c77b;
+  --primary-dark: #009e63;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --text-dark: #1e1e1e;
+  --shadow: rgba(0, 0, 0, 0.12);
+  --radius: 10px;
+  --transition: all 0.3s ease;
+  --font-main: "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== Base Styles ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--light-gray);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ===== Layout Wrapper ===== */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: var(--light-gray);
+}
+
+/* ===== Card Container ===== */
+.login-card {
+  display: flex;
+  flex-direction: row;
+  width: 850px;
+  max-width: 100%;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px var(--shadow);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+/* ===== Left Side (Form) ===== */
+.login-left {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-left h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1.8rem;
+}
+
+.login-left form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-left input {
+  padding: 0.9rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: var(--white);
+}
+
+.login-left input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 199, 123, 0.15);
+}
+
+.login-left button {
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.9rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(0, 199, 123, 0.3);
+}
+
+.login-left button:hover,
+.login-left button:active {
+  background-color: var(--primary-dark);
+}
+
+.or-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin: 1.5rem 0 0.8rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-icons i {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  color: #444;
+  font-size: 1rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.social-icons i:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* ===== Error Text ===== */
+.error-text {
+  color: #b91c1c;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* ===== Right Side (Welcome) ===== */
+.login-right {
+  flex: 1;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.login-right h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.login-right p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.signup-text {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.signup-text a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* ===== Responsive: Mobile Phones ===== */
+@media (max-width: 768px) {
+  .login-card {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .login-left,
+  .login-right {
+    padding: 2rem 1.5rem;
+  }
+
+  .login-right {
+    order: -1;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  .login-left h2,
+  .login-right h2 {
+    font-size: 1.5rem;
+  }
+
+  .login-left button {
+    padding: 0.85rem;
+  }
+
+  .social-icons i {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* ===== Touch Feedback for Android ===== */
+button:active,
+.social-icons i:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}

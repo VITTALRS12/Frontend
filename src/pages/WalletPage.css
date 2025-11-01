@@ -1,0 +1,33 @@
+.wallet-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.balance-box {
+  background: #f0f0f0;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.add-transaction-form {
+  margin-bottom: 2rem;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.add-transaction-form div {
+  margin-bottom: 0.75rem;
+}
+
+.add-transaction-form input,
+.add-transaction-form select {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.add-transaction-form button {
+  padding: 0.5rem 1rem;
+}

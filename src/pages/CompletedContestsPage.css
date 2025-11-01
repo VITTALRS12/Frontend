@@ -1,0 +1,113 @@
+/* ===== CompletedContestsPage.css ===== */
+
+/* Color theme */
+:root {
+  --primary: #6e45e2;
+  --primary-dark: #4a2cbf;
+  --background: #f4f5ff;
+  --text: #1e1e2f;
+  --muted: #6b7280;
+  --white: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* Global setup */
+body {
+  background-color: var(--background);
+  font-family: "Inter", "Poppins", sans-serif;
+  color: var(--text);
+}
+
+/* Wrapper */
+.completed-contests-page {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Page Title */
+.completed-contests-page h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.completed-contests-page h1::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  margin: 0.6rem auto 0;
+  border-radius: 3px;
+}
+
+/* Loading & Empty States */
+.loading-text,
+.no-contests {
+  text-align: center;
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+/* Contest Card */
+.contest-card {
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-left: 5px solid var(--primary);
+  cursor: pointer;
+}
+
+.contest-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Contest Title */
+.contest-card h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 0.4rem;
+}
+
+/* Contest Description */
+.contest-card p {
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+/* End Date */
+.contest-card .ended-date {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .completed-contests-page {
+    padding: 0 0.8rem;
+  }
+
+  .contest-card {
+    padding: 1rem;
+  }
+
+  .completed-contests-page h1 {
+    font-size: 1.6rem;
+  }
+
+  .contest-card h2 {
+    font-size: 1.1rem;
+  }
+}

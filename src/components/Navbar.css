@@ -1,0 +1,310 @@
+/* ==============================================
+   Navbar.css — High Contrast, Fully Responsive
+   Supports: Mobile, Android, Tablet, Web
+   ============================================== */
+
+:root {
+  --bg: #0a0f1c;           /* Navbar background */
+  --panel: #111827;        /* Dropdown background */
+  --accent: #00e0ff;       /* Cyan accent */
+  --accent-2: #ffd500;     /* Yellow accent */
+  --muted: #d1d5db;        /* Secondary text */
+  --text: #ffffff;         /* Main text color */
+  --danger: #ff4d4d;       /* Red danger color */
+  --glass: rgba(255, 255, 255, 0.08);
+  --radius: 10px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  --nav-height: 62px;
+  --banner-height: 40px;
+  --max-width: 1200px;
+}
+
+/* ===== Header ===== */
+header {
+  font-family: "Poppins", Inter, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Scrolling Banner ===== */
+.scroll-banner {
+  height: var(--banner-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #0e172a, #1e293b);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scroll-content {
+  color: #ffffff;
+  white-space: nowrap;
+  font-size: 14px;
+  padding-left: 100%;
+  animation: scroll-left 15s linear infinite;
+}
+
+.scroll-content .glow {
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent);
+}
+
+.scroll-content .time-highlight {
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+.scroll-content .gift-highlight {
+  color: #ff90e8;
+  font-weight: 600;
+}
+
+.scroll-content .cta-link {
+  margin-left: 8px;
+  cursor: pointer;
+  color: #00e0ff;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ===== Sparkle Welcome Text ===== */
+.sparkle-text {
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #f8fafc;
+  background: linear-gradient(90deg, #0f172a, #1e293b);
+  font-weight: 500;
+}
+
+/* ===== Navbar Container ===== */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--nav-height);
+  padding: 0 16px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--accent-2);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.logo:hover {
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent);
+}
+
+/* ===== Right Actions ===== */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Buttons */
+.nav-link-button,
+.menu-button,
+.cart-button {
+  background: transparent;
+  color: var(--text);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-link-button:hover,
+.menu-button:hover,
+.cart-button:hover {
+  background: var(--glass);
+  color: var(--accent-2);
+  transform: scale(1.05);
+}
+
+/* ===== Auth Links ===== */
+.auth-links {
+  display: flex;
+  gap: 8px;
+}
+
+.auth-links .nav-link {
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #000;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.auth-links .nav-link:hover {
+  background: var(--accent-2);
+}
+
+/* ===== Cart Badge ===== */
+.cart-button {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--accent-2);
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Username Section ===== */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.username {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+/* ===== Dropdown Menu ===== */
+.menu-links {
+  position: absolute;
+  top: calc(var(--banner-height) + var(--nav-height) + 8px);
+  right: 10px;
+  background: var(--danger);
+  color: var(--text);
+  padding: 10px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: slide-down 0.25s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-links button {
+  background: transparent;
+  color: var(--text);
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-links button:hover {
+  background: var(--glass);
+  color: var(--accent);
+  transform: scale(1.02);
+}
+
+/* ===== Animation ===== */
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: row;
+    padding: 0 12px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .menu-links {
+    right: 5px;
+    left: 5px;
+    width: auto;
+  }
+
+  .scroll-content {
+    font-size: 13px;
+  }
+
+  .sparkle-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-banner {
+    font-size: 12px;
+  }
+
+  .sparkle-text {
+    font-size: 12px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .menu-links {
+    width: calc(100% - 20px);
+    left: 10px;
+    bottom: 10px;
+    top: auto;
+  }
+}
+
+/* ===== Focus Styles ===== */
+button:focus,
+.nav-link:focus,
+.logo:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

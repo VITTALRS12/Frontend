@@ -1,0 +1,184 @@
+/* -------------------------------
+   MY ENTRIES PAGE STYLES
+   Designed by Senior UI/UX Designer (50+ years experience)
+   Focus: Clarity | Hierarchy | Interaction | Accessibility
+---------------------------------*/
+
+:root {
+  --primary: #2563eb;
+  --primary-light: #dbeafe;
+  --secondary: #1e293b;
+  --text: #334155;
+  --background: #f9fafb;
+  --border: #e2e8f0;
+  --success: #22c55e;
+  --warning: #facc15;
+  --error: #ef4444;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+body {
+  background-color: var(--background);
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+}
+
+/* Section Wrapper */
+section {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--secondary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+thead {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+thead th {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 2px solid var(--primary);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+tbody tr {
+  transition: background 0.2s ease;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+tbody tr:hover {
+  background-color: var(--primary-light);
+}
+
+td {
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Status Badges */
+td:last-child {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+td:last-child::before {
+  content: "● ";
+  font-size: 0.8rem;
+}
+
+td:last-child:contains("approved") {
+  color: var(--success);
+}
+
+td:last-child:contains("pending") {
+  color: var(--warning);
+}
+
+td:last-child:contains("rejected") {
+  color: var(--error);
+}
+
+/* Empty State */
+p {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--primary-light);
+  border-radius: var(--radius);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  section {
+    padding: 1.2rem;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 1rem;
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+  }
+
+  td {
+    border: none;
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--secondary);
+  }
+}
+
+/* Smooth Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section,
+table {
+  animation: fadeIn 0.5s ease;
+}

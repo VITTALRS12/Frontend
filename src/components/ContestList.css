@@ -1,0 +1,139 @@
+/* ContestList.css - Big & Attractive Cards */
+
+/* ===== Root Variables ===== */
+:root {
+  --primary-color: #6e45e2;
+  --primary-hover: #5632b8;
+  --bg-color: #f7f8fc;
+  --card-bg: #ffffff;
+  --text-color: #1f2937;
+  --text-muted: #6b7280;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --radius: 16px;
+  --transition: 0.3s ease;
+}
+
+/* ===== Global Styles ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* ===== Container ===== */
+.contest-list-wrapper {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ===== Hero Title ===== */
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ===== Section Title ===== */
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* ===== No Contests Message ===== */
+.no-contests {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-top: 30px;
+}
+
+/* ===== Contest Cards ===== */
+.contest {
+  display: flex;
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px var(--shadow);
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: all var(--transition);
+  overflow: hidden;
+}
+
+.contest:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px var(--shadow);
+}
+
+.contest.selected {
+  border: 3px solid var(--primary-color);
+}
+
+/* ===== Contest Image ===== */
+.contest-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: var(--radius) 0 0 var(--radius);
+  transition: transform var(--transition);
+}
+
+.contest:hover .contest-img {
+  transform: scale(1.05);
+}
+
+/* ===== Contest Content ===== */
+.contest-content {
+  padding: 25px 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contest-content h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.contest-content small {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .contest {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contest-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  .contest-content {
+    padding: 20px;
+  }
+
+  .contest-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .contest-content small {
+    font-size: 0.9rem;
+  }
+}

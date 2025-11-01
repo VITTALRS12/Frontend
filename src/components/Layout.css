@@ -1,0 +1,15 @@
+/* Layout.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.main {
+  min-height: calc(100vh - 60px); /* Adjust this if your footer height is different */
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
